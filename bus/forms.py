@@ -6,3 +6,7 @@ class registerform(forms.Form):
     username=forms.CharField(label='Username',widget=forms.TextInput(attrs={'class':'input100','placeholder':'User Name'}))
     password=forms.CharField(label='Password',widget=forms.TextInput(attrs={'class':'input100','placeholder':'Password'}))
     confirmpass = forms.CharField(label='Confirm Password', widget=forms.TextInput(attrs={'class': 'input100', 'placeholder': 'Confirm Password'}))
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='Username',widget=forms.TextInput(attrs={'class': 'input100', 'placeholder': 'User Name'}))
+    password = forms.CharField(label='Password',widget=forms.TextInput(attrs={'class': 'input100', 'placeholder': 'Password'}))

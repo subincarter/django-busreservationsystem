@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .form import loginform
 from django.http import HttpResponse
 from .models import *
@@ -24,8 +24,19 @@ def signup(request):
     return render(request,'signup.html',{'form':form})
 
 def login(request):
-    getdata=signupform()
-    getdata=objects.get('username','password')
-    if
-        return HttpResponse('authenticated')
+    form=LoginForm()
+    if request.method=='POST':
+        form=LoginForm(request.POST)
+        if form.is_valid():
+            username=form.cleaned_data['username']
+            password=form.cleaned_data['password']
+            try:
+                objlogin = signupform.objects.get(username=username,password=password)
+                request.session['user']=objlogin.username
+                return render(request,"reserve.html")
+            except:
+                return redirect('loginpage')
+    return render(request,'login.html',{'form':form})
+
+
 
