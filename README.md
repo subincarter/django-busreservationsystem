@@ -10,5 +10,17 @@ create vitrual environment = virtualenv venv
 
 then activate virtual environment= .\venv\Scripts\activate
 
+settings.py..>
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bus_database',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
 
  
