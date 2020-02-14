@@ -25,4 +25,6 @@ run xampp server and start mysql server
 
 create database name bus_database
 
+import the database file into the sql database
+
  
